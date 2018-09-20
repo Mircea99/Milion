@@ -5,46 +5,43 @@ import java.util.List;
 
 public class Millionaire {
 
+    private static List<Question> allQuestions = new ArrayList<>();
+
+
+
     public static void main(String[] args) {
 
-        Menu menu = new Menu();
+//        Menu menu = new Menu();
+//
+//        menu.showMenu();
+//
+//        Answer a = new Answer("bbb", true);
+////        a.isCorrect();
+//        System.out.println(a.isCorrect());
 
-        menu.showMenu();
+        initQuestions();
 
-        Answer a = new Answer("bbb", true);
-        a.isCorrect();
-        System.out.println(a.isCorrect());
+        List<Question> gameQuestionList = getGameQuestionList();
+        Game game1 = new Game(gameQuestionList);
 
-        Answer answer1 = new Answer("1999", false);
-        Answer answer2 = new Answer("2000");
-        Answer answer3 = new Answer("2001", false);
-        Answer answer4 = new Answer("2002", false);
+    }
 
+    private static void initQuestions() {
         List<Answer> answers = new ArrayList<>();
+        answers.add(new Answer("1999"));
+        answers.add(new Answer("2000", true));
+        answers.add(new Answer("2001"));
+        answers.add(new Answer("2002"));
 
-        answers.add(answer1);
-        answers.add(answer2);
-        answers.add(answer3);
-        answers.add(answer4);
+        Question question1 = new Question("In ce a fost lansat filmul Gladiatorul?", 1, answers);
+        allQuestions.add(question1);
 
-        List<Question> questions = new ArrayList<>();
-
-        Question question1 = new Question("In ce a fost lansat filmul Gladiatorul?", 3 , answers);
-
-        questions.add(question1);
-
-
-
-
-
-
-
-
-
-
-
-
-
+        answers.add(new Answer("1999", true));
+        answers.add(new Answer("2000"));
+        answers.add(new Answer("2001"));
+        answers.add(new Answer("2002"));
+        Question question2 = new Question("In ce a fost lansat filmul Matrix?", 2, answers);
+        allQuestions.add(question2);
 
     }
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Menu {
 
 
-    public void showMenu(){
+    public void showMenu() {
 
         System.out.println("Bine ati venit!");
         System.out.println("1.Incepe jocul");
